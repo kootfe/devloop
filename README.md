@@ -1,6 +1,3 @@
-# DevLoop + DSV Integration
-
-```markdown
 # DevLoop
 
 **The RPG that levels you up by coding. Not by grinding in-game.**
@@ -107,5 +104,5 @@ This allows DevLoop to process live events from multiple sources safely, maintai
 
 ## Screenshots / Demo
 
-*(Add screenshots or GIFs here to immediately show XP/loot in action)*
+*(Add screenshots or GIFs here to immediately show XP/loot in action... I still dont have them... BARE WITH ME)*
 
