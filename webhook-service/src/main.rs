@@ -3,7 +3,6 @@ use hyper::{header, Body, Request, Response, Server};
 use std::convert::Infallible;
 use sha2::Sha256;
 use hmac::{Hmac, Mac};
-use serde::Deserialize;
 use serde_json::Result;
 
 #[derive(Debug)]
@@ -15,24 +14,9 @@ struct Commit {
     rem_file: i32,
 }
 
-#[derive(Deserialize)]
-struct PushEvent {
-    #[serde(rename = "ref")]
-    branch_red: String,
-    commits: Vec<SingleCommit>,
-}
-
-#[derive(Deserialize)]
-struct SingleCommit {
-    id: String,
-    added: Vec<String>,
-    rem: Vec<String>,
-    modi: Vec<String>,
-}
-
 type HmacSha = Hmac<Sha256>;
 
-async fn handle(req: Request<Body>) -> Result<Response<Body>, Infallible> {
+async fn handle(req: Request<Body>) -> std::result::Result<Response<Body>, Infallible> {
     let secret = b"kuro";
     println!("Entered handle!");
 
